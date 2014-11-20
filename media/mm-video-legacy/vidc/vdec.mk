@@ -58,13 +58,13 @@ libmm-vdec-inc          += $(OMX_VIDEO_PATH)/vidc/common/inc
 libmm-vdec-inc          += hardware/qcom/media/mm-core/inc
 #DRM include - Interface which loads the DRM library
 libmm-vdec-inc	        += $(OMX_VIDEO_PATH)/DivxDrmDecrypt/inc
-libmm-vdec-inc          += device/sony/nozomi/display/libgralloc
-libmm-vdec-inc          += device/sony/nozomi/display/libcopybit
-libmm-vdec-inc          += device/sony/nozomi/display/libqservice
-libmm-vdec-inc          += device/sony/nozomi/display/libqdutils
+libmm-vdec-inc          += device/sony/fuji/display/libgralloc
+libmm-vdec-inc          += device/sony/fuji/display/libcopybit
+libmm-vdec-inc          += device/sony/fuji/display/libqservice
+libmm-vdec-inc          += device/sony/fuji/display/libqdutils
 libmm-vdec-inc          += frameworks/native/include/media/openmax
 libmm-vdec-inc          += frameworks/native/include/media/hardware
-libmm-vdec-inc          += device/sony/nozomi/media/libc2dcolorconvert
+libmm-vdec-inc          += device/sony/fuji/media/libc2dcolorconvert
 libmm-vdec-inc          += frameworks/av/include/media/stagefright
 
 LOCAL_MODULE                    := libOmxVdec
