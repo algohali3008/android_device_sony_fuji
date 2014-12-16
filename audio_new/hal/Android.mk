@@ -1,5 +1,4 @@
 ifeq ($(strip $(BOARD_USES_ALSA_AUDIO)),true)
-ifneq ($(strip $(BOARD_USES_NEW_AUDIO)),true)
 
 LOCAL_PATH := $(call my-dir)
 
@@ -55,8 +54,6 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_HFP)),true)
     LOCAL_SRC_FILES += audio_extn/hfp.c
 endif
 
-LOCAL_CFLAGS += -Wunused-parameter
-
 LOCAL_MODULE := audio.primary.$(TARGET_BOARD_PLATFORM)
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
@@ -66,4 +63,4 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 endif
-endif
+
