@@ -82,6 +82,15 @@ struct sensor_api_t* sensors_list_get_api_from_handle(int handle)
 	return NULL;
 }
 
+struct sensor_t* sensors_list_get_sensor_from_handle(int handle)
+{
+	int i;
+	for (i = 0; i < number_of_sensors; i++)
+		if (sensors[i].handle == handle)
+			return &sensors[i];
+	return NULL;
+}
+
 void sensors_list_foreach_api(int (*f)(struct sensor_api_t* api, void* arg),
 			      void *arg)
 {

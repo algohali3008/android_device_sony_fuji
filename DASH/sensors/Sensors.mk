@@ -153,6 +153,12 @@ $(yes-var-compass-lsm303dlh)-static-libs += libLSM303DLH
 $(yes-var-compass-lsm303dlh)-cflags += -I$(LOCAL_PATH)/libs/lsm303dlh \
 				       -DLSM303DLHC
 endif
+
+#
+# Pickup sensors
+#
+$(SOMC_CFG_SENSORS_PICKUP_BMA250NA_MOTION)-files += bma250na_motion.c
+
 #
 # Shared files
 #

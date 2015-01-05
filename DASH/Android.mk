@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
 # HAL module implemenation, not prelinked and stored in
-# hw/<SENSORS_HARDWARE_MODULE_ID>.<ro.product.board>.so
+# hw/<SENSORS_HARDWARE_MODULE_ID>.<TARGET_BOARD_PLATFORM>.so
 include $(CLEAR_VARS)
 
 DASH_ROOT := $(LOCAL_PATH)
@@ -9,7 +9,8 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_SHARED_LIBRARIES := \
 			liblog \
-			libcutils
+			libcutils \
+			libhardware_legacy
 
 LOCAL_SRC_FILES += 	sensors_module.c \
 			sensors_list.c \
@@ -44,5 +45,4 @@ LOCAL_MODULE := sensors.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
-include $(call all-makefiles-under, $(LOCAL_PATH)/libs)
-
+include $(call first-makefiles-under, $(LOCAL_PATH)/libs)

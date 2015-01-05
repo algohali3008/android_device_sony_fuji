@@ -62,7 +62,7 @@ static void *sensors_select_callback(void *arg)
 	} else if (ret) {
 		if (FD_ISSET(s->ctl_fds[0], &readfds)) {
 			read(s->ctl_fds[0], &ret, sizeof(ret));
-		} else if (fd >= 0 && FD_ISSET(s->fd, &readfds)) {
+		} else if (fd >= 0 && FD_ISSET(fd, &readfds)) {
 			LOCK(&wrapper_mutex);
 			LOCK(&s->fd_mutex);
 			if (s->fd == fd)
